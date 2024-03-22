@@ -27,38 +27,38 @@
             </li>
             <?php if (isset($_SESSION['customer']) || isset($_COOKIE['customer'])) { ?>
               <li class="nav-item">
-                <a class="nav-link" href="?act=danh_muc">Danh mục sản phẩm</a>
+                <a class="nav-link" href="?action=viewCategory">Danh mục sản phẩm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=san_pham">Sản phẩm</a>
+                <a class="nav-link" href="?action=viewProduct">Sản phẩm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=nguoi_dung">Người dùng</a>
+                <a class="nav-link" href="?action=viewCustomer">Người dùng</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=chuc_vu">Chức vụ</a>
+                <a class="nav-link" href="?action=viewChucVu">Chức vụ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=khuyen_mai">Khuyến mãi</a>
+                <a class="nav-link" href="?action=viewPromotion">Khuyến mãi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=bai_viet">Bài viết</a>
+                <a class="nav-link" href="?action=viewBlog">Bài viết</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=binh_luan">Bình luận</a>
+                <a class="nav-link" href="?action=viewComment">Bình luận</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=danh_gia">Đánh giá</a>
+                <a class="nav-link" href="?action=viewEvaluation">Đánh giá</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=lien_he">Liên hệ</a>
+                <a class="nav-link" href="?action=viewContact">Liên hệ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?act=logout">Đăng xuất</a>
+                <a class="nav-link" href="?action=logout">Đăng xuất</a>
               </li>
             <?php } else { ?>
               <li class="nav-item">
-                <a class="ms-auto btn btn-success" href="?act=login">Đăng nhập</a>
+                <a class="ms-auto btn btn-success" href="?action=login">Đăng nhập</a>
               </li>
             <?php } ?>
           </ul>
