@@ -6,6 +6,7 @@ session_start();
 require_once 'common/env.php';
 require_once 'common/helper.php';
 require_once 'common/connect-db.php';
+require_once 'common/model.php';
 
 require_file(PATH_CONTROLLERS);
 require_file(PATH_MODELS);
@@ -16,12 +17,19 @@ if (isset($_COOKIE['customer'])) {
   $_SESSION['customer'] = explode(",", $_COOKIE['customer']);
 }
 
-$act =  $_GET['act'] ?? '/';
+$action =  $_GET['action'] ?? '/';
+$id = $_GET['id'] ?? '';
 
-match ($act) {
+match ($action) {
   '/' => homeIndex(),
+
   'login' => loginIndex(),
   'logout' => authLogout(),
+
+  'viewCategory' => viewCategory(),
+  'addCategory' => addCategory(),
+  'editCategory' => editCategory(),
+  'deleteCategory' => deleteCategory(),
 };
 
 require_once PATH_VIEWS . 'layouts/footer.php';
