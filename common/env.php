@@ -6,7 +6,6 @@ define('PATH_VIEWS', __DIR__ . '/../views/');
 
 define('BASE_URL', 'http://localhost/XayDungWebBanDienThoai_Nhom2/');
 
-
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');
 define('DB_USERNAME', 'root');

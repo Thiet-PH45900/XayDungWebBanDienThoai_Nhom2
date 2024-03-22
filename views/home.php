@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-</head>
-
-<body>
-  <h1>home</h1>
-</body>
-
-</html>
+<div class="container">
+  <main>
+    <h1 class="alert alert-success">Home</h1>
+  </main>
+</div>
