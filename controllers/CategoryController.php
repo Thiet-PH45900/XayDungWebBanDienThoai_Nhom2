@@ -25,7 +25,6 @@ function editCategory()
 {
   $id = $_GET['id'];
   $tableName = 'tb_danh_muc_sp';
-  $category = showOne($tableName, $id);
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
@@ -37,6 +36,7 @@ function editCategory()
 
     header('Location: ./?action=viewCategory');
   } else {
+    $category = showOne($tableName, $id);
     require_once PATH_VIEWS . '/category/edit.php';
   }
 }

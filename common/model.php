@@ -63,8 +63,8 @@ if (!function_exists('insert')) {
     }
 }
 
-if (!function_exists('insert_get_last_id')) {
-    function insert_get_last_id($tableName, $data = [])
+if (!function_exists('insertGetLastId')) {
+    function insertGetLastId($tableName, $data = [])
     {
         try {
             $strKeys = get_str_keys($data);
