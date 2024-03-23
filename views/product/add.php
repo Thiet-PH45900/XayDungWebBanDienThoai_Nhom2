@@ -24,37 +24,37 @@
           <input type="number" class="form-control" id="quantity" name="so_luong" placeholder="0" required>
         </div>
 
-        <div class="my-3">
-          <label class="label-form" for="category-id">Danh mục:<span class="text-danger">*</span></label>
+        <div class="mb-3">
+          <label class="form-label" for="category-id">Danh mục:<span class="text-danger">*</span></label>
           <select class="form-select" id="category-id" name="id_dm" required>
             <option selected hidden value="">Chọn...</option>
             <?php
             $categories = listAll('tb_danh_muc_sp');
             foreach ($categories as $category) {
-              if ($category['trang_thai'] == 'show')
+              if ($category['trang_thai'] == 'show') {
             ?>
-              <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>
+                <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>
             <?php
+              }
             }
             ?>
           </select>
         </div>
 
-        <div class="my-3">
-          <label class="label-form" for="trang_thai">Trạng thái:<span class="text-danger">*</span></label>
+        <div class="mb-3">
+          <label class="form-label" for="trang_thai">Trạng thái:<span class="text-danger">*</span></label>
           <select class="form-select" id="trang_thai" name="trang_thai" required>
             <option value="show" selected>Show</option>
             <option value="hide">Hide</option>
           </select>
         </div>
-
-        <div class="my-3">
-          <label class="label-form" for="date">Ngày nhập:<span class="text-danger">*</span></label>
-          <input type="date" name="ngay_nhap" id="date">
-        </div>
       </div>
 
       <div class="col-md">
+        <div class="mb-3">
+          <label class="form-label" for="date">Ngày nhập:<span class="text-danger">*</span></label>
+          <input type="date" class="form-control" name="ngay_nhap" id="date" required>
+        </div>
         <div class="mb-3">
           <label for="description" class="form-label">Mô tả:</label>
           <textarea type="text" class="form-control" id="description" name="mo_ta" rows="2"></textarea>
