@@ -1,7 +1,7 @@
 <main class="container">
   <h1 class="alert alert-danger text-center">Thêm sản phẩm</h1>
 
-  <form method="post" enctype="multipart/form-data" novalidate>
+  <form method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md">
         <div class="mb-3">
@@ -62,7 +62,7 @@
 
         <label for="image" class="form-label">Thumbnail:<span class="text-danger">*</span></label>
         <div class="mb-3 input-group">
-          <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)" name="hinh_anh" required>
+          <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)" name="thumbnail" required>
           <label class="input-group-text" for="image">Tải lên</label>
         </div>
         <div class="text-center"><img id="output" width="200px" height="200px" /></div>
@@ -71,7 +71,7 @@
 
     <div class="d-flex justify-content-between mt-3">
       <div>
-        <a href="./?controller=product" class="btn btn-secondary">Go back</a>
+        <a href="./?action=viewProduct" class="btn btn-secondary">Go back</a>
         <button type="reset" class="btn btn-danger">Reset</button>
       </div>
       <button type="submit" class="btn btn-primary">Save</button>

@@ -5,6 +5,16 @@ function viewProduct()
   require_once PATH_VIEWS . '/product/view.php';
 }
 
+function viewProductDetail()
+{
+  $id = $_GET['id'];
+  $tableName = 'tb_san_pham';
+
+  $product = showOne($tableName, $id);
+
+  require_once PATH_VIEWS . '/product/detail.php';
+}
+
 function addProduct()
 {
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -20,8 +30,10 @@ function addProduct()
       'ngay_nhap' => $_POST['ngay_nhap'],
     ];
 
-    $image = uploadImage($_FILES['hinh_anh']);
-    $data['thumbnail'] = $image;
+    if ($_FILES['thumbnail']['size'] !== 0) {
+      $thumbnail = uploadImage($_FILES['thumbnail']);
+      $data['thumbnail'] = $thumbnail;
+    }
 
     insert($tableName, $data);
     header('Location: ./?action=viewProduct');
@@ -45,6 +57,11 @@ function editProduct()
       'id_dm' => $_POST['id_dm'],
       'ngay_nhap' => $_POST['ngay_nhap'],
     ];
+
+    if ($_FILES['thumbnail']['size'] !== 0) {
+      $thumbnail = uploadImage($_FILES['thumbnail']);
+      $data['thumbnail'] = $thumbnail;
+    }
 
     update($tableName, $id, $data);
 

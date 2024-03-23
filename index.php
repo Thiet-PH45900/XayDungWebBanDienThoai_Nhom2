@@ -32,6 +32,7 @@ match ($action) {
   'deleteCategory' => deleteCategory(),
 
   'viewProduct' => viewProduct(),
+  'viewProductDetail' => viewProductDetail(),
   'addProduct' => addProduct(),
   'editProduct' => editProduct(),
   'deleteProduct' => deleteProduct(),
