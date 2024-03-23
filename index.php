@@ -30,6 +30,12 @@ match ($action) {
   'addCategory' => addCategory(),
   'editCategory' => editCategory(),
   'deleteCategory' => deleteCategory(),
+
+  'viewProduct' => viewProduct(),
+  'viewProductDetail' => viewProductDetail(),
+  'addProduct' => addProduct(),
+  'editProduct' => editProduct(),
+  'deleteProduct' => deleteProduct(),
 };
 
 require_once PATH_VIEWS . 'layouts/footer.php';
