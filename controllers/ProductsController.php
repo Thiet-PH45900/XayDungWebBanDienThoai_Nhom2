@@ -8,7 +8,7 @@ function SearchProduct() {
     // var_dump($catalogues);die();
     if (isset($_GET["search"])) {
         // var_dump($_GET['catalogue_id']);die();
-        $catalogue_id = isset($_GET['catalogue_id_dm']) ? $_GET['catalogue_id_dm'] : null;
+        $catalogue_id = isset($_GET['catalogue_id']) ? $_GET['catalogue_id'] : null;
 
         $products = getSeachProduct($catalogue_id);
     }
