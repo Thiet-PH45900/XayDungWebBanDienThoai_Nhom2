@@ -11,8 +11,14 @@ function addCategory()
     $tableName = 'tb_danh_muc_sp';
     $data = [
       'ten_dm' => $_POST['ten_dm'],
+      'mo_ta' => $_POST['mo_ta'],
       'trang_thai' => $_POST['trang_thai'],
     ];
+
+    if ($_FILES['hinh_anh']['size'] !== 0) {
+      $image = uploadImage($_FILES['hinh_anh']);
+      $data['hinh_anh'] = $image;
+    }
 
     insert($tableName, $data);
 
@@ -29,8 +35,14 @@ function editCategory()
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
       'ten_dm' => $_POST['ten_dm'],
+      'mo_ta' => $_POST['mo_ta'],
       'trang_thai' => $_POST['trang_thai'],
     ];
+
+    if ($_FILES['hinh_anh']['size'] !== 0) {
+      $image = uploadImage($_FILES['hinh_anh']);
+      $data['hinh_anh'] = $image;
+    }
 
     update($tableName, $id, $data);
 

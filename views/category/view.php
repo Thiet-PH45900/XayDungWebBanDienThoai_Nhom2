@@ -8,7 +8,9 @@
           <input class="form-check-input mt-0" type="checkbox" name="select-all">
         </th>
         <th scope="col">ID</th>
+        <th scope="col">Hình ảnh</th>
         <th scope="col">Tên danh mục</th>
+        <th scope="col">Mô tả</th>
         <th scope="col">Trạng thái</th>
         <th scope="col">Action</th>
       </tr>
@@ -23,7 +25,9 @@
             <input class="form-check-input mt-0" type="checkbox" value="<?= $category['id'] ?>">
           </td>
           <td><?= $category['id'] ?></td>
+          <td><img width="100px" height="100px" src="uploads/<?= $category['hinh_anh'] ?>" alt="<?= $category['ten_dm'] ?>"></td>
           <td><?= $category['ten_dm'] ?></td>
+          <td><?= $category['mo_ta'] ?></td>
           <td><?= $category['trang_thai'] ?></td>
           <td>
             <a href="./?action=editCategory&id=<?= $category['id'] ?>" class="btn btn-warning mb-2">

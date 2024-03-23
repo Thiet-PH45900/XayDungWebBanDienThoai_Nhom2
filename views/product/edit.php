@@ -64,7 +64,7 @@
 
         <label for="image" class="form-label">Thumbnail:<span class="text-danger">*</span></label>
         <div class="mb-3 input-group">
-          <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)" name="thumbnail" required>
+          <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)" name="thumbnail">
           <label class="input-group-text" for="image">Tải lên</label>
         </div>
         <div class="text-center"><img id="output" width="200px" height="200px" src="uploads/<?= $product['thumbnail'] ?>" /></div>
