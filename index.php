@@ -8,8 +8,8 @@ require_once 'common/helper.php';
 require_once 'common/connect-db.php';
 require_once 'common/model.php';
 
-require_file(PATH_CONTROLLERS);
 require_file(PATH_MODELS);
+require_file(PATH_CONTROLLERS);
 
 require_once PATH_VIEWS . 'layouts/header.php';
 
@@ -36,6 +36,12 @@ match ($action) {
   'addProduct' => addProduct(),
   'editProduct' => editProduct(),
   'deleteProduct' => deleteProduct(),
+
+  'viewCustomer' => viewCustomer(),
+  'viewCustomerDetail' => viewCustomerDetail(),
+  'addCustomer' => addCustomer(),
+  'editCustomer' => editCustomer(),
+  'deleteCustomer' => deleteCustomer(),
 };
 
 require_once PATH_VIEWS . 'layouts/footer.php';

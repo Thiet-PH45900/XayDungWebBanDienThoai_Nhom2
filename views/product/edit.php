@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md">
         <div class="mb-3">
-          <label for="id" class="form-label">Id sản phẩm:</label>
+          <label for="id" class="form-label">ID sản phẩm:</label>
           <input type="text" class="form-control" disabled value="<?= $product['id'] ?>">
         </div>
 
@@ -16,16 +16,16 @@
 
         <div class="mb-3">
           <label for="price" class="form-label">Giá sản phẩm:<span class="text-danger">*</span></label>
-          <input type="number" class="form-control" id="price" name="gia_sp" placeholder="0" required value="<?= $product['gia_sp'] ?>">
+          <input type="number" class="form-control" id="price" name="gia_sp" required value="<?= $product['gia_sp'] ?>">
         </div>
 
         <div class="mb-3">
           <label for="quantity" class="form-label">Số lượng:<span class="text-danger">*</span></label>
-          <input type="number" class="form-control" id="quantity" name="so_luong" placeholder="0" required value="<?= $product['so_luong'] ?>">
+          <input type="number" class="form-control" id="quantity" name="so_luong" required value="<?= $product['so_luong'] ?>">
         </div>
 
-        <div class="my-3">
-          <label class="label-form" for="category-id">Danh mục:<span class="text-danger">*</span></label>
+        <div class="mb-3">
+          <label class="form-label" for="category-id">Danh mục:<span class="text-danger">*</span></label>
           <select class="form-select" id="category-id" name="id_dm" required>
             <?php $category = showOne('tb_danh_muc_sp', $product['id_dm']) ?>
             <option selected hidden value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>
@@ -41,8 +41,8 @@
           </select>
         </div>
 
-        <div class="my-3">
-          <label class="label-form" for="trang_thai">Trạng thái:<span class="text-danger">*</span></label>
+        <div class="mb-3">
+          <label class="form-label" for="trang_thai">Trạng thái:<span class="text-danger">*</span></label>
           <select class="form-select" id="trang_thai" name="trang_thai" required>
             <option value="<?= $product['trang_thai'] ?>" selected hidden><?= ucfirst($product['trang_thai']) ?></option>
             <option value="show">Show</option>
@@ -50,9 +50,9 @@
           </select>
         </div>
 
-        <div class="my-3">
-          <label class="label-form" for="date">Ngày nhập:<span class="text-danger">*</span></label>
-          <input type="date" name="ngay_nhap" id="date" value="<?= $product['ngay_nhap'] ?>">
+        <div class="mb-3">
+          <label class="form-label" for="date">Ngày nhập:<span class="text-danger">*</span></label>
+          <input type="date" class="form-control" name="ngay_nhap" id="date" value="<?= $product['ngay_nhap'] ?>" required>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
           <textarea type="text" class="form-control" id="description" name="mo_ta" rows="2"><?= $product['mo_ta'] ?></textarea>
         </div>
 
-        <label for="image" class="form-label">Thumbnail:<span class="text-danger">*</span></label>
+        <label for="image" class="form-label">Thumbnail:</label>
         <div class="mb-3 input-group">
           <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)" name="thumbnail">
           <label class="input-group-text" for="image">Tải lên</label>

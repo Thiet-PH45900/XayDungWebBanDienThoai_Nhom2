@@ -34,7 +34,7 @@
       </div>
 
       <div class="col-md">
-        <label for="image" class="form-label">Hình ảnh:<span class="text-danger">*</span></label>
+        <label for="image" class="form-label">Hình ảnh:</label>
         <div class="mb-3 input-group">
           <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)" name="hinh_anh">
           <label class="input-group-text" for="image">Tải lên</label>

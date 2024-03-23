@@ -28,10 +28,10 @@
           <td><?= $product['so_luong'] ?></td>
           <td><?= $product['trang_thai'] ?></td>
           <td>
-            <a href="?action=viewProductDetail&id=<?= $product['id'] ?>" class="btn btn-primary mb-1">
+            <a href="?action=viewProductDetail&id=<?= $product['id'] ?>" class="btn btn-primary mt-1">
               Xem chi tiết
             </a>
-            <a href="?action=editProduct&id=<?= $product['id'] ?>" class="btn btn-warning mb-1">
+            <a href="?action=editProduct&id=<?= $product['id'] ?>" class="btn btn-warning mt-1">
               <i class="fa-solid fa-pen-to-square"></i>
               Sửa
             </a>

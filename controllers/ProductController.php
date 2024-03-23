@@ -32,11 +32,12 @@ function addProduct()
 
     if ($_FILES['thumbnail']['size'] !== 0) {
       $thumbnail = uploadImage($_FILES['thumbnail']);
-      $data['thumbnail'] = $thumbnail;
+      if ($thumbnail) {
+        $data['thumbnail'] = $thumbnail;
+        insert($tableName, $data);
+        header('Location: ./?action=viewProduct');
+      }
     }
-
-    insert($tableName, $data);
-    header('Location: ./?action=viewProduct');
   }
   require_once PATH_VIEWS . '/product/add.php';
 }

@@ -17,12 +17,14 @@ function addCategory()
 
     if ($_FILES['hinh_anh']['size'] !== 0) {
       $image = uploadImage($_FILES['hinh_anh']);
-      $data['hinh_anh'] = $image;
+      if ($image) {
+        $data['hinh_anh'] = $image;
+        insert($tableName, $data);
+        header('Location: ./?action=viewCategory');
+      } else {
+        echo '<script>alert("Có lỗi xảy ra vui lòng kiểm tra lại")</script>';
+      }
     }
-
-    insert($tableName, $data);
-
-    header('Location: ./?action=viewCategory');
   }
   require_once PATH_VIEWS . '/category/add.php';
 }
@@ -41,7 +43,9 @@ function editCategory()
 
     if ($_FILES['hinh_anh']['size'] !== 0) {
       $image = uploadImage($_FILES['hinh_anh']);
-      $data['hinh_anh'] = $image;
+      if ($image) {
+        $data['hinh_anh'] = $image;
+      }
     }
 
     update($tableName, $id, $data);
